@@ -8,18 +8,40 @@
  *      Circle, Rectangle, Square, Triangle and Right Triangle.
  *
  * Algorithm / Plan:
- *      1. Create an array of size 6 with variable type Figure
- *      2. Instantiate two Rectangle objects, one Square object, one Triangle object, two Circle objects,
- *      3. For each element in Movie array, call the object's toString and calcLateFees methods for 5 late days.
- *      4. Expected results in order should be Movie=10.0, Action=15.0, Comedy=12.5, Drama=10.0
+ *      1. Create an array of size 8 with variable type Figure.
+ *      2. Instantiate 2 Rectangle objects, 1 Square object, 1 Triangle object, 2 Circle objects, 2 Right Triangle objects
+ *      3. For each element in figures array:
+ *              call calculateArea() and calculatePerimeter() methods.
+ *              print the object using its toString() method.
+ *      4. Compare elements 0 and 1 of the figures array using equals() method. Interpret the return value as a string.
+ *      5. Compare elements 4 and 5 of the figures array using equals() method. Interpret the return value as a string.
+ *      6. Compare elements 3 and 2 of the figures array using equals() method. Interpret the return value as a string.
+ *      7. Cast the Figure in element 6 as a RightTriangle, print its toString().
+ *      8. Use RightTriangle mutator methods to set legs to 6.0 and 8.0. Print its revised toString().
+ *
+ * Lab Questions:
+ *      1. Is the default (no-arg) constructor for the Figure class necessary?  How can you get around providing this?
+ *              Because there are not other constructors in the Figure class, Java will implicitly declare one with the
+ *              default values of 0.0 for both member variables. The current constructor is not needed.
+ *      2. What methods does the Square class inherit from Figure?  Which does it inherit from Rectangle?
+ *              The Square class inherits the getters and setters for area and perimeter from the Figure class.
+ *              From the Rectangle class, it inherits the calculateArea(), calculatePerimeter(), getNumberOfSides(),
+ *              getters and setters for width and height.
+ *      3. How would you change the design of this lab so that the perimeter and area of the object being created or
+ *       modified are always correct (without having to invoke calculatePerimeter and calculateArea)?  Do you remember
+  *      what this condition is called?
+  *             You could do so by adding a call to the calculateArea() and calculatePerimeter() methods in every
+  *             setter method of each child class and any parameterized constructors. This will ensure that any change
+  *             to a figure's dimensions will also calculate a change in its area and perimeter. We have heard this
+  *             type of condition referred to as a "side-effect".
  */
 
 public class LabDemo {
 
     public static void main (String[] args){
 
-        // Declare array of 6 Figure objects
-        Figure[] figures = new Figure[7];
+        // Declare array of 8 Figure objects
+        Figure[] figures = new Figure[8];
 
         // Instantiate two Rectangle objects
         figures[0] = new Rectangle(10.3, 8.0);
@@ -31,8 +53,9 @@ public class LabDemo {
         // Instantiate two Circles
         figures[4] = new Circle(4.31);
         figures[5] = new Circle(8.15);
-        // Instantiate Right Triangle
-        figures[6] = new RightTriangle(5.0, 12, 13);
+        // Instantiate two Right Triangles
+        figures[6] = new RightTriangle(3.0, 4.0);
+        figures[7] = new RightTriangle(5.0, 12.0);
 
 
         // Loop through Figure array
@@ -53,8 +76,23 @@ public class LabDemo {
         // Compare Circles at element 4 and 5
         System.out.println("  Circle 5 is " + (figures[4].equals(figures[5]) ? "" : "not ")
                 + "equals to Circle 6.");
+        // Compare Circle at element 5 to itself
+        System.out.println("  Circle 5 is " + (figures[4].equals(figures[4]) ? "" : "not ")
+                + "equals to Circle 5.");
         // Compare Triangle at element 3 with Square in element 2
         System.out.println("  Triangle 4 is " + (figures[3].equals(figures[2]) ? "" : "not ")
                 + "equals to Square 3.");
+
+        // Test right-triangle reassignment
+        System.out.println("\nTest right-triangle reassignments");
+        // We need access to setters, so create new RightTriangle object by downcasting figure[6]
+        RightTriangle newRightTriangle = (RightTriangle) figures[6];
+        // Print original RightTriangle
+        System.out.println("  Original: " + newRightTriangle.toString());
+        // Set legs to 6.0 and 8.0
+        newRightTriangle.setLengthA(6.0);
+        newRightTriangle.setLengthB(8.0);
+        // Print revised RightTriangle
+        System.out.println("  Revised: " + newRightTriangle.toString());
     }
 }

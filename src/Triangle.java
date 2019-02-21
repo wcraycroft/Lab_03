@@ -5,14 +5,15 @@ public class Triangle extends Figure{
     private double lengthB;
     private double lengthC;
 
-
+    // Constructor
     public Triangle(double lengthA, double lengthB, double lengthC) {
         this.lengthA = lengthA;
         this.lengthB = lengthB;
         this.lengthC = lengthC;
     }
 
-    public double getlengthA() {
+    // Getters and Setters
+    public double getLengthA() {
         return lengthA;
     }
 
@@ -20,9 +21,10 @@ public class Triangle extends Figure{
         this.lengthA = lengthA;
     }
 
-    public double getlengthB() {
+    public double getLengthB() {
         return lengthB;
     }
+
     public void setLengthB(double lengthB) {
         this.lengthB = lengthB;
     }
@@ -35,28 +37,27 @@ public class Triangle extends Figure{
         this.lengthC = lengthC;
     }
 
-    //method which returns the integer 3
+    // Overrides parent, method which returns the integer 3
     public int getNumberOfSides() {
         return 3;
     }
 
-    //method calculates the perimeter of the triangle & uses setter method in Figure to store its value
+    // Method calculates the perimeter of the triangle & uses setter method in Figure to store its value
     public void calculatePerimeter() {
         setPerimeter(lengthA + lengthB + lengthC);
     }
 
-    //method computes the area of the triangle and uses the setter emthod in Figure to store its value
+    // Method computes the area of the triangle and uses the setter method in Figure to store its value
     public void calculateArea() {
 
-        //half the parameter for area formula
+        // Halve the parameter for area formula
         double halfP = (lengthA + lengthB + lengthC)/2;
 
         //Heron's formula for calculating triangle's area
         setArea(Math.sqrt(halfP*(halfP-lengthA)*(halfP-lengthB)*(halfP-lengthC)));
     }
 
-
-    //equals method
+    // equals method
     public boolean equals(Object anObject) {
         if(anObject == null)
             return false;
@@ -70,7 +71,7 @@ public class Triangle extends Figure{
         }
     }
 
-    //toString
+    // toString
     public String toString() {
 
         DecimalFormat df = new DecimalFormat("0.00");

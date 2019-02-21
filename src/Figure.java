@@ -7,7 +7,7 @@
  * Description: Abstract parent class which manipulates data about a nondescript figure
  *
  *      Instance variables:
- *          perimeter (double) - the diameter or circuference of the figure
+ *          perimeter (double) - the diameter or circumference of the figure
  *          area (double) - the area of the figure
  *
  *      Methods:
@@ -25,8 +25,8 @@
 public abstract class Figure {
 
     // Member variables
-    private double perimeter = 0;
-    private double area = 0;
+    private double perimeter;
+    private double area;
 
     // Default constructor
     public Figure() {
@@ -58,6 +58,7 @@ public abstract class Figure {
     public abstract void calculatePerimeter();
     public abstract void calculateArea();
 
+    // Return 0 sides by default. Overridden in Rectangle and Triangle classes.
     public int getNumberOfSides() {
         return 0;
     }

@@ -20,12 +20,15 @@ public class Square extends Rectangle {
 
     public String toString() {
         return "Square has sides " + twoDP.format(getHeight())
-                + " (" + getNumberOfSide() + " sides)\n"
+                + " (" + getNumberOfSides() + " sides)\n"
                 + "Its perimeter is " + twoDP.format(getPerimeter())
                 + " and its area is " + twoDP.format(super.getArea());
     }
 
     public boolean equals(Object anObject) {
-        return super.equals(anObject);
+        if ((anObject == null) || getClass() != anObject.getClass())
+            return false;
+        Square otherSquare = (Square) anObject;
+        return getLength() == otherSquare.getLength();
     }
 }

@@ -33,7 +33,7 @@ public class Rectangle extends Figure {
         calculateArea();
     }
     // Helper method, returns number of sides (4)
-    public int getNumberOfSide() {
+    public int getNumberOfSides() {
         return 4;
     }
     // Helper method calculatePerimeter
@@ -49,7 +49,7 @@ public class Rectangle extends Figure {
     public String toString() {
         return "Rectangle has height " + twoDP.format(height)
                 + " and width " + twoDP.format(width)
-                + " (" + getNumberOfSide() + " sides)\n"
+                + " (" + getNumberOfSides() + " sides)\n"
                 + "Its perimeter is " + twoDP.format(getPerimeter())
                 + " and its area is " + twoDP.format(super.getArea());
     }

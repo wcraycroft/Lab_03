@@ -23,10 +23,6 @@ public class Circle extends Figure
         setRadius(radius);
     }
 
-    // Calculated values
-    // double circumference = (2 * Math.PI * radius);
-    //double area = (Math.PI * radius * radius);
-
     // Calculating perimeter
     public void calculatePerimeter()
     {
@@ -56,22 +52,12 @@ public class Circle extends Figure
         {
             return false;
         }
-
         Circle otherCircle = (Circle) anObject;
-
-        if(radius == otherCircle.getRadius())
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return radius == otherCircle.getRadius();
     }
 
-
-
-
-
+    // Calculated values
+    //double circumference = (2 * Math.PI * radius);
+    //double area = (Math.PI * radius * radius);
 
 }
