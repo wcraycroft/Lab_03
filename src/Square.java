@@ -1,3 +1,20 @@
+/* Square.java
+ * Author:  William Craycroft
+ *          Daniil Berezhnyi
+ *          Licol Havaiia
+ * Module:  3
+ * Project: Lab 3
+ * Description: This class is used to store the dimensions of a Square.
+ *
+ *      Methods:
+ *          Constructors:
+ *              Parameterized constructor that takes in length and sends it to parent constructor.
+ *          Setters and Getters for length
+ *          Other methods:
+ *              toString() - Displays length, number of sides, perimeter and area
+ *              equals(Object) - Checks two square objects for equal length
+ */
+
 import java.text.DecimalFormat;
 
 public class Square extends Rectangle {

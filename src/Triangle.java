@@ -1,3 +1,29 @@
+/* Triangle.java
+ * Author:  William Craycroft
+ *          Daniil Berezhnyi
+ *          Licol Havaiia
+ * Module:  3
+ * Project: Lab 3
+ * Description: This class is used to store the dimensions of a Triangle, and calculate its area and perimeter.
+ *
+ *     Instance variables:
+ *          lengthA (double) - the length of one side of the Triangle
+ *          lengthB (double) - the length of the second side of the Triangle
+ *          lengthC (double) - the length of the third of the Triangle
+ *
+ *      Methods:
+ *          Constructors:
+ *              Parameterized constructor that takes in lengthA, lengthB, lengthC (doubles).
+ *          Setters and Getters for all instance variables
+ *          Helper methods (Override parent class):
+ *              calculatePerimeter() - returns the perimeter of the Triangle
+ *              calculateArea() - returns the area of the Triangle
+ *              getNumberOfSides() - returns the number of sides(3)
+ *          Other methods:
+ *              toString() - displays 3 lengths, area and perimeter
+ *              equals(Object) - checks two Triangle objects for equals dimensions. Note the order of the parameters must match.
+ */
+
 import java.text.DecimalFormat;
 
 public class Triangle extends Figure{
@@ -57,7 +83,7 @@ public class Triangle extends Figure{
         setArea(Math.sqrt(halfP*(halfP-lengthA)*(halfP-lengthB)*(halfP-lengthC)));
     }
 
-    // equals method
+    // equals method - Note that the order of the parameters must match
     public boolean equals(Object anObject) {
         if(anObject == null)
             return false;

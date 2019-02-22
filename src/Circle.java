@@ -1,3 +1,26 @@
+/* Circle.java
+ * Author:  William Craycroft
+ *          Daniil Berezhnyi
+ *          Licol Havaiia
+ * Module:  3
+ * Project: Lab 3
+ * Description: This class is used to store the dimensions of a Circle, and calculate its area and perimeter.
+ *
+ *     Instance variables:
+ *          radius (double) - the radius of the Circle
+ *
+ *      Methods:
+ *          Constructors:
+ *              Parameterized constructor that takes in radius (double).
+ *          Setters and Getters for radius
+ *          Helper methods (Override parent class):
+ *              calculatePerimeter() - calculates the perimeter of the Circle
+ *              calculateArea() - calculates the area of the Circle
+ *          Other methods:
+ *              toString() - displays radius, area and perimeter
+ *              equals(Object) - checks two Circle objects for equals radius
+ */
+
 import java.text.DecimalFormat;
 import java.lang.Math;
 
